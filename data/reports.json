@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "meter": "10001",
+    "type": "Falla de servicio",
+    "description": "Sin suministro intermitente desde 2025-10-15",
+    "status": "open"
+  },
+  {
+    "id": 2,
+    "meter": "10001",
+    "type": "Otro",
+    "description": ""
+  }
+]

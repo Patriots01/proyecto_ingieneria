@@ -1,0 +1,23 @@
+[
+  {
+    "id": "c1",
+    "name": "Centro de Atención - CDMX Norte",
+    "address": "Av. Reforma 100, Ciudad de México",
+    "phone": "01 800 888 2338",
+    "hours": "Lun-Vie 9:00-18:00"
+  },
+  {
+    "id": "c2",
+    "name": "Centro de Atención - Guadalajara",
+    "address": "Av. Vallarta 1234, Guadalajara, JAL",
+    "phone": "01 800 888 2338",
+    "hours": "Lun-Vie 9:00-18:00"
+  },
+  {
+    "id": "c3",
+    "name": "Centro de Atención - Monterrey",
+    "address": "Blvd. Díaz Ordaz 500, Monterrey, NLE",
+    "phone": "01 800 888 2338",
+    "hours": "Lun-Vie 9:00-18:00"
+  }
+]

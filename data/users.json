@@ -1,0 +1,46 @@
+[
+  {
+    "meter": "10001",
+    "name": "Juan Pérez",
+    "address": "Calle Falsa 1234",
+    "balance": 250.75,
+    "consumption": [
+      {
+        "month": "2025-10",
+        "kwh": 320
+      },
+      {
+        "month": "2025-09",
+        "kwh": 290
+      },
+      {
+        "month": "2025-08",
+        "kwh": 310
+      }
+    ],
+    "notifications": []
+  },
+  {
+    "meter": "10002",
+    "name": "María García",
+    "address": "Av. Siempre Viva 742",
+    "balance": 0,
+    "consumption": [
+      {
+        "month": "2025-10",
+        "kwh": 120
+      },
+      {
+        "month": "2025-09",
+        "kwh": 110
+      },
+      {
+        "month": "2025-08",
+        "kwh": 130
+      }
+    ],
+    "notifications": [
+      "Irregularidad reportada: corte intermitente"
+    ]
+  }
+]
