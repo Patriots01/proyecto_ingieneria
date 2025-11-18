@@ -1,9 +1,15 @@
 import React from 'react'
+import fs from 'fs'
+import path from 'path'
 
 async function getUsers() {
-  const res = await fetch('http://localhost:3000/api/users')
-  if (!res.ok) return []
-  return res.json()
+  const dataPath = path.join(process.cwd(), 'data', 'users.json')
+  try {
+    const raw = fs.readFileSync(dataPath, 'utf-8')
+    return JSON.parse(raw)
+  } catch (e) {
+    return []
+  }
 }
 
 export default async function AdminDashboard({ searchParams }: { searchParams?: { worker?: string, meter?: string } }) {

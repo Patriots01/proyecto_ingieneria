@@ -85,5 +85,183 @@
     "notifications": [
       "Irregularidad reportada: corte intermitente"
     ]
+  },
+  {
+    "meter": "10003",
+    "name": "Carlos López",
+    "address": "Calle del Sol 45",
+    "balance": 45,
+    "arrears": 0,
+    "payments": [
+      {
+        "quarter": "Q4 2025",
+        "status": "pending",
+        "amount": 45,
+        "dueDate": "2025-11-30"
+      },
+      {
+        "quarter": "Q3 2025",
+        "status": "paid",
+        "amount": 42,
+        "paidDate": "2025-09-02"
+      }
+    ],
+    "consumption": [
+      {
+        "month": "2025-10",
+        "kwh": 95
+      },
+      {
+        "month": "2025-09",
+        "kwh": 88
+      },
+      {
+        "month": "2025-08",
+        "kwh": 92
+      }
+    ],
+    "notifications": []
+  },
+  {
+    "meter": "10004",
+    "name": "Sofía Martínez",
+    "address": "Boulevard Central 200",
+    "balance": 300,
+    "arrears": 300,
+    "payments": [
+      {
+        "quarter": "Q4 2025",
+        "status": "overdue",
+        "amount": 300,
+        "dueDate": "2025-11-10"
+      },
+      {
+        "quarter": "Q3 2025",
+        "status": "paid",
+        "amount": 280,
+        "paidDate": "2025-09-12"
+      }
+    ],
+    "consumption": [
+      {
+        "month": "2025-10",
+        "kwh": 420
+      },
+      {
+        "month": "2025-09",
+        "kwh": 398
+      },
+      {
+        "month": "2025-08",
+        "kwh": 410
+      }
+    ],
+    "notifications": [
+      "Lectura pendiente: verificar medidor"
+    ]
+  },
+  {
+    "meter": "10005",
+    "name": "Rodrigo Sánchez",
+    "address": "Camino Real 12",
+    "balance": 0,
+    "arrears": 0,
+    "payments": [
+      {
+        "quarter": "Q4 2025",
+        "status": "paid",
+        "amount": 75,
+        "paidDate": "2025-11-05"
+      },
+      {
+        "quarter": "Q3 2025",
+        "status": "paid",
+        "amount": 72.5,
+        "paidDate": "2025-09-01"
+      }
+    ],
+    "consumption": [
+      {
+        "month": "2025-10",
+        "kwh": 150
+      },
+      {
+        "month": "2025-09",
+        "kwh": 142
+      },
+      {
+        "month": "2025-08",
+        "kwh": 148
+      }
+    ],
+    "notifications": []
+  },
+  {
+    "meter": "10006",
+    "name": "Ana Torres",
+    "address": "Paseo del Lago 7",
+    "balance": 0,
+    "arrears": 0,
+    "payments": [
+      {
+        "quarter": "Q4 2025",
+        "status": "paid",
+        "amount": 75,
+        "dueDate": "2025-11-30",
+        "paidDate": "2025-11-18"
+      }
+    ],
+    "consumption": [
+      {
+        "month": "2025-10",
+        "kwh": 200
+      },
+      {
+        "month": "2025-09",
+        "kwh": 195
+      },
+      {
+        "month": "2025-08",
+        "kwh": 205
+      }
+    ],
+    "notifications": [
+      "Lectura registrada manualmente"
+    ]
+  },
+  {
+    "meter": "90001",
+    "name": "Laura Ortega",
+    "address": "Oficina Centro Norte",
+    "role": "admin",
+    "employeeId": "ADM-01",
+    "assignedCenter": "Centro Norte",
+    "permissions": [
+      "manage_users",
+      "view_reports",
+      "respond_irregularities"
+    ],
+    "balance": 0,
+    "arrears": 0,
+    "payments": [],
+    "consumption": [],
+    "notifications": []
+  },
+  {
+    "meter": "90002",
+    "name": "Miguel Ramírez",
+    "address": "Oficina Centro Sur",
+    "role": "admin",
+    "employeeId": "ADM-02",
+    "assignedCenter": "Centro Sur",
+    "permissions": [
+      "manage_centers",
+      "manage_reports"
+    ],
+    "balance": 0,
+    "arrears": 0,
+    "payments": [],
+    "consumption": [],
+    "notifications": []
   }
 ]
