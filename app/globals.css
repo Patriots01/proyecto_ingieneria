@@ -143,4 +143,49 @@ body {
   margin-top: 0.6rem;
 }
 
+/* Payment status badges */
+.payment-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.payment-badge--paid {
+  background-color: #dbeafe;
+  color: #0369a1;
+}
+
+.payment-badge--pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.payment-badge--overdue {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Print helper: when the body has class 'printing', hide everything except the target receipt */
+.printing * {
+  visibility: hidden !important;
+}
+.printing #receipt-to-print, .printing #receipt-to-print * {
+  visibility: visible !important;
+}
+.printing #receipt-to-print {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+@media print {
+  /* Ensure only the receipt area prints */
+  .printing * { visibility: hidden !important; }
+  .printing #receipt-to-print, .printing #receipt-to-print * { visibility: visible !important; }
+}
+
+
 

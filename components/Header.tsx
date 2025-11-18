@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Header() {
   return (
@@ -6,8 +7,15 @@ export default function Header() {
       <div className="header-top" />
       <div className="d-flex align-items-center justify-content-between py-3">
         <div className="d-flex align-items-center gap-3">
-          <div className="bg-white rounded-circle d-flex align-items-center justify-content-center shadow" style={{width:40,height:40}}>
-            <span className="text-cfe-blue fw-bold">C</span>
+          <div className="bg-white rounded-circle d-flex align-items-center justify-content-center shadow" style={{width:50,height:50,position:'relative'}}>
+            <Image 
+              src="/cfe_icon.jpeg" 
+              alt="CFE Logo" 
+              width={40} 
+              height={40}
+              className="rounded-circle"
+              style={{objectFit: 'cover'}}
+            />
           </div>
           <div>
             <Link href="/" className="brand fs-4">CFE Portal</Link>

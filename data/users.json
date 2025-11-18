@@ -3,7 +3,29 @@
     "meter": "10001",
     "name": "Juan Pérez",
     "address": "Calle Falsa 1234",
-    "balance": 250.75,
+    "balance": 130.25,
+    "arrears": 130.25,
+    "payments": [
+      {
+        "quarter": "Q4 2025",
+        "status": "paid",
+        "amount": 125.5,
+        "dueDate": "2025-11-15",
+        "paidDate": "2025-11-18"
+      },
+      {
+        "quarter": "Q3 2025",
+        "status": "paid",
+        "amount": 120,
+        "paidDate": "2025-09-10"
+      },
+      {
+        "quarter": "Q2 2025",
+        "status": "overdue",
+        "amount": 130.25,
+        "dueDate": "2025-08-15"
+      }
+    ],
     "consumption": [
       {
         "month": "2025-10",
@@ -25,6 +47,27 @@
     "name": "María García",
     "address": "Av. Siempre Viva 742",
     "balance": 0,
+    "arrears": 0,
+    "payments": [
+      {
+        "quarter": "Q4 2025",
+        "status": "paid",
+        "amount": 110,
+        "paidDate": "2025-11-08"
+      },
+      {
+        "quarter": "Q3 2025",
+        "status": "paid",
+        "amount": 105.5,
+        "paidDate": "2025-09-05"
+      },
+      {
+        "quarter": "Q2 2025",
+        "status": "paid",
+        "amount": 102.75,
+        "paidDate": "2025-08-20"
+      }
+    ],
     "consumption": [
       {
         "month": "2025-10",

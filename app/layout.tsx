@@ -4,7 +4,11 @@ import React from 'react'
 import Header from '../components/Header'
 
 export const metadata = {
-  title: 'CFE Portal',
+  title: 'CFE Portal - Consulta y Gestiona tus Recibos',
+  description: 'Portal de atención al cliente de la CFE. Consulta tu consumo de energía eléctrica, adeudos, historiales de pago e irregularidades.',
+  icons: {
+    icon: '/cfe_icon.jpeg',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

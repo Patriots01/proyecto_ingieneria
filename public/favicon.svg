@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Fondo azul CFE -->
+  <rect width="200" height="200" fill="#003a70" rx="20"/>
+  
+  <!-- Círculo exterior dorado -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#ffd100" strokeWidth="4"/>
+  
+  <!-- Círculo interior blanco -->
+  <circle cx="100" cy="100" r="80" fill="white"/>
+  
+  <!-- Letra C estilizada (símbolo de CFE) -->
+  <g transform="translate(100, 100)">
+    <!-- Arc of the C -->
+    <path d="M -35,0 A 35,35 0 1,1 -35,-1" fill="none" stroke="#003a70" strokeWidth="18" strokeLinecap="round" strokeDasharray="120,240"/>
+    
+    <!-- Lightning bolt inside C -->
+    <path d="M -5,-25 L -12,-8 L 0,-5 L 8,12 L 0,8 L -8,22 Z" fill="#ffd100"/>
+  </g>
+  
+  <!-- Rectángulo dorado en la base (elemento decorativo CFE) -->
+  <rect x="40" y="160" width="120" height="12" fill="#ffd100" rx="2"/>
+</svg>

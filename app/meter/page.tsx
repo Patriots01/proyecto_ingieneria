@@ -1,9 +1,10 @@
 import React from 'react'
 import PrintButton from '../../components/PrintButton'
 import BackButton from '../../components/BackButton'
+import PaymentActions from '../../components/PaymentActions'
 
 async function getUser(meter: string) {
-  const res = await fetch(`http://localhost:3000/api/user/${meter}`)
+  const res = await fetch('http://localhost:3000/api/user/' + meter)
   if (!res.ok) return null
   return res.json()
 }
@@ -32,6 +33,7 @@ export default async function MeterPage({ searchParams }: { searchParams?: { met
   return (
     <div className="space-y-4">
       <BackButton />
+
       <div className="flex items-start justify-between">
         <div>
           <h1 className="text-2xl font-bold mb-1">{user.name}</h1>
@@ -41,8 +43,44 @@ export default async function MeterPage({ searchParams }: { searchParams?: { met
         <div className="text-right">
           <div className="text-sm muted">Balance pendiente</div>
           <div className="text-xl font-semibold text-red-600">${user.balance}</div>
+          {user.arrears > 0 && (
+            <div className="mt-2 text-sm muted">Adeudos: <strong className="text-red-600">${user.arrears}</strong></div>
+          )}
         </div>
       </div>
+
+      {user.payments && user.payments.length > 0 && (
+        <section className="card">
+          <h2 className="font-semibold mb-3">Estado de pagos trimestrales</h2>
+          <div className="space-y-2">
+            {user.payments.map((payment: any) => (
+              <div key={payment.quarter} className="flex items-center justify-between p-3 border rounded bg-gray-50">
+                <div>
+                  <div className="font-semibold text-gray-800">{payment.quarter}</div>
+                  <div className="text-sm muted">${payment.amount}</div>
+                </div>
+                <div className="text-right">
+                  {payment.status === 'paid' && (
+                    <span className="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-semibold">✓ Pagado</span>
+                  )}
+                  {payment.status === 'pending' && (
+                    <span className="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-semibold"> Pendiente</span>
+                  )}
+                  {payment.status === 'overdue' && (
+                    <span className="inline-block px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-semibold">✕ Vencido</span>
+                  )}
+                  <div className="text-xs muted mt-1">
+                    {payment.paidDate ? 'Pagado: ' + payment.paidDate : 'Vence: ' + payment.dueDate}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-3">
+            <PaymentActions meter={user.meter} payments={user.payments} />
+          </div>
+        </section>
+      )}
 
       <section className="card">
         <h2 className="font-semibold mb-2">Historial de consumo</h2>
@@ -53,9 +91,62 @@ export default async function MeterPage({ searchParams }: { searchParams?: { met
         </ul>
       </section>
 
-      <section className="flex items-center gap-3">
-        <PrintButton />
+      {/* Printable receipt block (only this will be printed when using the button) */}
+      <section id="receipt-to-print" className="card">
+        <div className="d-flex justify-content-between items-center mb-3">
+          <div className="d-flex align-items-center gap-3">
+            <img src="/cfe_icon.jpeg" alt="CFE" style={{width:72,height:72,objectFit: 'cover', borderRadius:8}} />
+            <div>
+              <div className="font-semibold">CFE - Suministrador de Servicios Básicos</div>
+              <div className="text-sm muted">Recibo trimestral</div>
+            </div>
+          </div>
+          <div className="text-right">
+            <div className="text-sm muted">Cuenta / Medidor</div>
+            <div className="font-semibold">{user.meter}</div>
+          </div>
+        </div>
+
+        <div className="border rounded p-3 mb-3">
+          <div className="d-flex justify-content-between">
+            <div>
+              <div className="text-sm muted">Cliente</div>
+              <div className="font-semibold">{user.name}</div>
+              <div className="text-sm muted">{user.address}</div>
+            </div>
+            <div className="text-right">
+              <div className="text-sm muted">Total a pagar</div>
+              <div className="text-xl font-bold">${(() => {
+                const unpaid = (user.payments || []).filter((p: any) => p.status !== 'paid')
+                const total = unpaid.reduce((s: number, p: any) => s + Number(p.amount || 0), 0)
+                return total.toFixed(2)
+              })()}</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 className="font-semibold mb-2">Detalle de pagos (trimestral)</h3>
+        <table className="w-100" style={{borderCollapse: 'collapse'}}>
+          <thead>
+            <tr>
+              <th className="text-left">Trimestre</th>
+              <th className="text-right">Importe</th>
+              <th className="text-right">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {(user.payments || []).map((p: any) => (
+              <tr key={p.quarter}>
+                <td>{p.quarter}</td>
+                <td className="text-right">${Number(p.amount).toFixed(2)}</td>
+                <td className="text-right">{p.status === 'paid' ? 'Pagado' : p.status === 'pending' ? 'Pendiente' : 'Vencido'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </section>
+
+
 
       <section className="card">
         <h2 className="font-semibold">Reportar irregularidad</h2>
