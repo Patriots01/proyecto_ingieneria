@@ -4,10 +4,14 @@ import path from 'path'
 
 const dataPath = path.join(process.cwd(), 'data', 'users.json')
 
+export const revalidate = 0 // Disable caching for this route
+
 export async function GET() {
   const raw = fs.readFileSync(dataPath, 'utf-8')
   const users = JSON.parse(raw)
-  return NextResponse.json(users)
+  const response = NextResponse.json(users)
+  response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
+  return response
 }
 
 export async function PUT(request: Request) {

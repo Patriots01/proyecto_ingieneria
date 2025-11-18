@@ -2,11 +2,20 @@ import React from 'react'
 import PrintButton from '../../components/PrintButton'
 import BackButton from '../../components/BackButton'
 import PaymentActions from '../../components/PaymentActions'
+import fs from 'fs'
+import path from 'path'
+
+export const revalidate = 0 // Disable caching for this page
 
 async function getUser(meter: string) {
-  const res = await fetch('http://localhost:3000/api/user/' + meter)
-  if (!res.ok) return null
-  return res.json()
+  const dataPath = path.join(process.cwd(), 'data', 'users.json')
+  try {
+    const raw = fs.readFileSync(dataPath, 'utf-8')
+    const users = JSON.parse(raw)
+    return users.find((u: any) => u.meter === meter) || null
+  } catch (e) {
+    return null
+  }
 }
 
 export default async function MeterPage({ searchParams }: { searchParams?: { meter?: string } }) {
