@@ -5,6 +5,7 @@
     "address": "Calle Falsa 1234",
     "balance": 130.25,
     "arrears": 130.25,
+    "serviceStatus": "connected",
     "payments": [
       {
         "quarter": "Q4 2025",
@@ -46,8 +47,9 @@
     "meter": "10002",
     "name": "María García",
     "address": "Av. Siempre Viva 742",
-    "balance": 0,
+    "balance": 100,
     "arrears": 0,
+    "serviceStatus": "connected",
     "payments": [
       {
         "quarter": "Q4 2025",
@@ -92,6 +94,7 @@
     "address": "Calle del Sol 45",
     "balance": 45,
     "arrears": 0,
+    "serviceStatus": "connected",
     "payments": [
       {
         "quarter": "Q4 2025",
@@ -128,6 +131,7 @@
     "address": "Boulevard Central 200",
     "balance": 300,
     "arrears": 300,
+    "serviceStatus": "disconnected",
     "payments": [
       {
         "quarter": "Q4 2025",
@@ -166,6 +170,7 @@
     "address": "Camino Real 12",
     "balance": 0,
     "arrears": 0,
+    "serviceStatus": "connected",
     "payments": [
       {
         "quarter": "Q4 2025",
@@ -202,6 +207,7 @@
     "address": "Paseo del Lago 7",
     "balance": 0,
     "arrears": 0,
+    "serviceStatus": "connected",
     "payments": [
       {
         "quarter": "Q4 2025",
@@ -234,8 +240,11 @@
     "name": "Laura Ortega",
     "address": "Oficina Centro Norte",
     "role": "admin",
+    "username": "laura.ortega",
+    "password": "admin123",
     "employeeId": "ADM-01",
     "assignedCenter": "Centro Norte",
+    "adminType": "general",
     "permissions": [
       "manage_users",
       "view_reports",
@@ -252,11 +261,54 @@
     "name": "Miguel Ramírez",
     "address": "Oficina Centro Sur",
     "role": "admin",
+    "username": "miguel.ramirez",
+    "password": "admin123",
     "employeeId": "ADM-02",
     "assignedCenter": "Centro Sur",
+    "adminType": "general",
     "permissions": [
       "manage_centers",
       "manage_reports"
+    ],
+    "balance": 0,
+    "arrears": 0,
+    "payments": [],
+    "consumption": [],
+    "notifications": []
+  },
+  {
+    "meter": "90003",
+    "name": "Carlos Mendez",
+    "address": "Departamento de Desconexiones",
+    "role": "admin",
+    "username": "carlos.mendez",
+    "password": "disconn123",
+    "employeeId": "ADM-03",
+    "adminType": "disconnection",
+    "permissions": [
+      "manage_disconnections",
+      "view_arrears",
+      "process_requests"
+    ],
+    "balance": 0,
+    "arrears": 0,
+    "payments": [],
+    "consumption": [],
+    "notifications": []
+  },
+  {
+    "meter": "90004",
+    "name": "Patricia Gómez",
+    "address": "Departamento de Reconexiones",
+    "role": "admin",
+    "username": "patricia.gomez",
+    "password": "recon123",
+    "employeeId": "ADM-04",
+    "adminType": "reconnection",
+    "permissions": [
+      "manage_reconnections",
+      "verify_payments",
+      "process_requests"
     ],
     "balance": 0,
     "arrears": 0,

@@ -24,11 +24,6 @@ export default function Header() {
         </div>
 
         <div className="d-flex align-items-center gap-3">
-          <nav className="d-none d-md-block">
-            <Link href="/user" className="me-3 text-cfe-dark">Usuario</Link>
-            <Link href="/admin" className="text-cfe-dark">Administrador</Link>
-          </nav>
-
           <Link href="/user" className="btn btn-success d-inline-flex align-items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person" viewBox="0 0 16 16">
               <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>

@@ -11,5 +11,15 @@
     "meter": "10001",
     "type": "Otro",
     "description": ""
+  },
+  {
+    "id": 3,
+    "type": "Lectura incorrecta",
+    "description": ""
+  },
+  {
+    "id": 4,
+    "type": "Lectura incorrecta",
+    "description": "l,kpm"
   }
 ]

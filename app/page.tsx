@@ -7,7 +7,7 @@ export default function Home() {
         <div className="hero-inner container">
           <div className="row align-items-center">
             <div className="col-md-8">
-              <h1 className="hero-title display-5">Proyecto de la Comicion Federal de<br/>Electricidad</h1>
+              <h1 className="hero-title display-5">Proyecto de la Comision Federal de<br/>Electricidad</h1>
               <p className="text-white-50 mt-3">Consulta tu recibo, reporta irregularidades y gestiona pagos de manera rápida y segura.</p>
               <div className="mt-4">
                 <Link href="/user" className="btn btn-success me-2">Consulta aquí</Link>
@@ -48,6 +48,20 @@ export default function Home() {
             <div className="service-title text-white">Reportes</div>
             <div className="service-desc text-white">Notifica irregularidades en tu suministro</div>
             <div className="mt-3"><a href="/report" className="btn btn-success">Reportar</a></div>
+          </div>
+
+          <div className="service-card service-card--highlight">
+            <div className="service-icon">🔐</div>
+            <div className="service-title text-white">Panel Administrativo</div>
+            <div className="service-desc text-white">Acceso de administradores</div>
+            <div className="mt-3"><a href="/admin/login" className="btn btn-primary">Ingresar</a></div>
+          </div>
+
+          <div className="service-card service-card--highlight">
+            <div className="service-icon">🧮</div>
+            <div className="service-title text-white">Ejemplo de cálculo</div>
+            <div className="service-desc text-white">Aprende cómo se calcula tu consumo de luz</div>
+            <div className="mt-3"><a href="/payment-example" className="btn btn-success">Ver ejemplo</a></div>
           </div>
         </div>
       </section>
